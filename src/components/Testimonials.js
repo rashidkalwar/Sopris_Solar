@@ -8,37 +8,37 @@ const reviews = [
   {
     name: 'John wick',
     address: 'Bolder, Colorado',
-    image: '/sun-style-0.png',
+    image: '/sun-style-0.avif',
     text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus feugiat elit quis augue varius, in volutpat magna molestie. Suspendisse potenti.',
   },
   {
     name: 'Peter parker',
     address: 'Bolder, Colorado',
-    image: '/sun-style-1.png',
+    image: '/sun-style-1.avif',
     text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus feugiat elit quis augue varius, in volutpat magna molestie. Suspendisse potenti.',
   },
   {
     name: 'Deckerd shaw',
     address: 'Bolder, Colorado',
-    image: '/sun-style-2.png',
+    image: '/sun-style-2.avif',
     text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus feugiat elit quis augue varius, in volutpat magna molestie. Suspendisse potenti.',
   },
   {
     name: 'Geralt of rivia',
     address: 'Bolder, Colorado',
-    image: '/sun-style-3.png',
+    image: '/sun-style-3.avif',
     text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus feugiat elit quis augue varius, in volutpat magna molestie. Suspendisse potenti.',
   },
   {
     name: 'Stephen Strange',
     address: 'Bolder, Colorado',
-    image: '/sun-style-4.png',
+    image: '/sun-style-4.avif',
     text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus feugiat elit quis augue varius, in volutpat magna molestie. Suspendisse potenti.',
   },
   {
     name: 'Bruce wayne',
     address: 'Bolder, Colorado',
-    image: '/sun-style-5.png',
+    image: '/sun-style-5.avif',
     text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus feugiat elit quis augue varius, in volutpat magna molestie. Suspendisse potenti.',
   },
 ];
@@ -47,7 +47,7 @@ const Card = (props) => {
   return (
     <>
       <div className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 pointer-events-none">
-        <img className="rounded-t-lg" src={props.image} alt="" />
+        <motion.img className="rounded-t-lg" src={props.image} alt="" />
         <div className="p-4">
           <h5 className="text-lg md:text-2xl text-center font-semibold tracking-tight text-gray-900 dark:text-white">
             {props.name}

@@ -7,9 +7,9 @@ module.exports = {
     extend: {
       backgroundImage: {
         //image used on login page
-        'login-bg': "url('/login-background.png')",
+        'login-bg': "url('/login-background.avif')",
         //image used on register page
-        'signup-bg': "url('/signup-background.png')",
+        'signup-bg': "url('/signup-background.avif')",
       },
     },
     screens: {

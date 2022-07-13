@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 
 import { Slider } from 'src/components/ImageSlider/Slider';
 import MainNavbar from 'src/components/Navbar';
@@ -57,12 +58,11 @@ export default function Home() {
               </h2>
               <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
                 <div className="inline-flex rounded-md shadow">
-                  <a
-                    href="/contact"
-                    className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-orange-500 hover:bg-orange-600"
-                  >
-                    Contact now
-                  </a>
+                  <Link href="/contact">
+                    <a className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-orange-500 hover:bg-orange-600">
+                      Contact now
+                    </a>
+                  </Link>
                 </div>
               </div>
             </div>

@@ -72,11 +72,11 @@ export default function AboutSection() {
             Services
           </h2>
           <p className="mt-2 text-3xl font-bold text-gray-900 dark:text-gray-100">
-            What we're doing at Sopris Solar
+            What we&apos;re doing at Sopris Solar
           </p>
           <p className="mt-4 text-lg text-gray-500 dark:text-gray-400">
-            We're installing the latest and greatest the solar industry has to
-            offer all over Colorado.
+            We&apos;re installing the latest and greatest the solar industry has
+            to offer all over Colorado.
           </p>
         </div>
         <div className="mt-12 lg:mt-0 lg:col-span-2">

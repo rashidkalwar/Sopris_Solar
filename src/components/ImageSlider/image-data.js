@@ -1,8 +1,8 @@
 export const images = [
-  '/sun-style-0.png',
-  '/sun-style-1.png',
-  '/sun-style-2.png',
-  '/sun-style-3.png',
-  '/sun-style-4.png',
-  '/sun-style-5.png',
+  '/sun-style-0.avif',
+  '/sun-style-1.avif',
+  '/sun-style-2.avif',
+  '/sun-style-3.avif',
+  '/sun-style-4.avif',
+  '/sun-style-5.avif',
 ];

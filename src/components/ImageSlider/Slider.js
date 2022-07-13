@@ -68,9 +68,12 @@ export const Slider = () => {
   // detect it as an entirely new image. So you can infinitely paginate as few as 1 images.
   const imageIndex = wrap(0, images.length, page);
 
-  const paginate = (newDirection) => {
-    setPage([page + newDirection, newDirection]);
-  };
+  const paginate = React.useCallback(
+    (newDirection) => {
+      setPage([page + newDirection, newDirection]);
+    },
+    [page]
+  );
 
   const next = () => {
     paginate(1);
@@ -81,11 +84,9 @@ export const Slider = () => {
   };
 
   React.useEffect(() => {
-    if (!paused) {
-      const timer = setInterval(() => next(), 5000);
-      return () => clearInterval(timer);
-    }
-  }, [next, 5000]);
+    const timer = setInterval(() => paginate(1), 5000);
+    return () => clearInterval(timer);
+  }, [paginate]);
 
   return (
     <div className="relative aspect-video max-h-[600px] mx-auto mt-5 flex justify-center items-center overflow-hidden">
@@ -120,16 +121,12 @@ export const Slider = () => {
       <div
         className="top-[calc(50% - 20px)] absolute text-white opacity-80 hover:opacity-100 rounded-3xl w-16 h-16 flex justify-center items-center select-none cursor-pointer font-bold text-7xl z-[1] right-8"
         onClick={next}
-        onMouseEnter={() => setPaused(true)}
-        onMouseLeave={() => setPaused(false)}
       >
         <BsChevronRight />
       </div>
       <div
         className="top-[calc(50% - 20px)] absolute text-white opacity-80 hover:opacity-100 rounded-3xl w-16 h-16 flex justify-center items-center select-none cursor-pointer font-bold text-7xl z-[1] left-8"
         onClick={prev}
-        onMouseEnter={() => setPaused(true)}
-        onMouseLeave={() => setPaused(false)}
       >
         <BsChevronLeft />
       </div>
