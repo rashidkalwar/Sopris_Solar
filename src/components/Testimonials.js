@@ -48,17 +48,17 @@ const Card = (props) => {
     <>
       <div className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 pointer-events-none">
         <motion.img className="rounded-t-lg" src={props.image} alt="" />
-        <div className="p-4">
-          <h5 className="text-lg md:text-2xl text-center font-semibold tracking-tight text-gray-900 dark:text-white">
+        <div className="p-2 md:p-4">
+          <h5 className="text-md md:text-2xl text-center font-semibold tracking-tight text-gray-900 dark:text-white">
             {props.name}
           </h5>
-          <div className="flex justify-center mt-1">
+          <div className="flex justify-center md:mt-1">
             <MdOutlineLocationOn className="text-gray-500 mr-1" />
-            <h6 className="mb-3 text-[10px] md:text-xs text-center font-medium tracking-normal text-gray-500">
+            <h6 className="mb-1 md:mb-3 text-[10px] md:text-xs text-center font-medium tracking-normal text-gray-500">
               {props.address}
             </h6>
           </div>
-          <div className="flex justify-center items-center my-2">
+          <div className="flex justify-center items-center my-1">
             <RiStarFill className="text-amber-400 text-xl md:text-2xl mx-0.5" />
             <RiStarFill className="text-amber-400 text-xl md:text-2xl mx-0.5" />
             <RiStarFill className="text-amber-400 text-xl md:text-2xl mx-0.5" />
@@ -66,7 +66,7 @@ const Card = (props) => {
             <RiStarFill className="text-amber-400 text-xl md:text-2xl mx-0.5" />
           </div>
           <RiDoubleQuotesL className="text-xl" />
-          <p className="mb-3 font-normal text-sm md:text-base text-center text-gray-700 dark:text-gray-400">
+          <p className="mb-3 font-normal text-xs md:text-base text-center text-gray-700 dark:text-gray-400">
             {props.text}
           </p>
           <div className="w-full flex justify-end">
@@ -102,7 +102,7 @@ function Testimonials() {
         whileTap={{ cursor: 'grabbing' }}
       >
         <div className="flex items-center md:hidden">
-          <BsArrowLeft className="text-2xl mr-2 text-slate-700 dark:text-white" />
+          <BsArrowLeft className="text-xl text-center text-slate-700 dark:text-white" />
           <p className="text-lg"> Swipe left to see more... </p>
         </div>
         <motion.div
@@ -115,7 +115,7 @@ function Testimonials() {
               <motion.div
                 key={idx}
                 whileHover={{ scale: 1.1 }}
-                className="min-h-[10rem] md:min-h-[20rem] min-w-[20rem]  md:min-w-[30rem] p-5 md:p-10"
+                className="min-h-[6rem] md:min-h-[20rem] min-w-[16rem]  md:min-w-[30rem] p-5 md:p-10"
               >
                 {/* <img
                   className="w-full h-full rounded-3xl pointer-events-none"

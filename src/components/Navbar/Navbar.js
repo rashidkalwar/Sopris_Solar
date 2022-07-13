@@ -202,6 +202,10 @@ const MobileDropdown = ({ ...props }) => {
   );
 };
 
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ');
+}
+
 export default function MainNavbar() {
   const theme = useTheme();
   const router = useRouter();
@@ -310,7 +314,7 @@ export default function MainNavbar() {
               <div className="flex items-center justify-between">
                 <div>
                   <Link href="/">
-                    <a rel="noopener">
+                    <a className="focus:outline-none" rel="noopener">
                       <Logo />
                     </a>
                   </Link>
