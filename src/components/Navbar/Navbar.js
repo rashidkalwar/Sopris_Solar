@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { Fragment, useState } from 'react';
 import { Popover, Transition, Menu } from '@headlessui/react';
@@ -23,12 +22,12 @@ import {
   FaPhoneSquareAlt,
 } from 'react-icons/fa';
 import { RiHandHeartLine } from 'react-icons/ri';
-import { useTheme } from 'next-themes';
 
 import ThemeToggler from 'src/components/theme/Toggler';
 import UserDropdownMenu from 'src/components/Navbar/UserDropdownMenu';
 import { UserAuth } from 'src/firebase/Context/auth.context';
 import { logOut } from 'src/firebase/Context/authOptions';
+import NavbarLogo from 'src/components/Assets/Logos/NavbarDarkBrand';
 
 const services = [
   {
@@ -207,37 +206,12 @@ function classNames(...classes) {
 }
 
 export default function MainNavbar() {
-  const theme = useTheme();
   const router = useRouter();
   const { user } = UserAuth();
   const logout = () => {
     logOut()
       .then(() => router.push('/'))
       .catch(console.error);
-  };
-
-  const Logo = () => {
-    return (
-      <>
-        {theme.resolvedTheme === 'light' ? (
-          <Image
-            layout="fixed"
-            height={48}
-            width={230}
-            src="/logos/horizontal-black.svg"
-            alt="Sopris Solar Logo"
-          />
-        ) : (
-          <Image
-            layout="fixed"
-            height={48}
-            width={230}
-            src="/logos/horizontal-light.svg"
-            alt="Sopris Solar Logo"
-          />
-        )}
-      </>
-    );
   };
 
   return (
@@ -254,7 +228,7 @@ export default function MainNavbar() {
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <Link href="/">
               <a className="flex items-center" rel="noopener">
-                <Logo />
+                <NavbarLogo />
               </a>
             </Link>
           </div>
@@ -315,7 +289,7 @@ export default function MainNavbar() {
                 <div>
                   <Link href="/">
                     <a className="focus:outline-none" rel="noopener">
-                      <Logo />
+                      <NavbarLogo />
                     </a>
                   </Link>
                 </div>

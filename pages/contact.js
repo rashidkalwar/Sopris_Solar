@@ -118,7 +118,6 @@ export default function Contact() {
                         value={name}
                         name="name"
                         autoComplete="name"
-                        autoFocus
                         required
                         placeholder="Name"
                         onChange={(e) => setName(e.target.value)}
