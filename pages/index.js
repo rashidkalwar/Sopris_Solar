@@ -48,18 +48,18 @@ export default function Home() {
           <AboutSection />
         </section>
         <div>
-          <div className="bg-gray-50 dark:bg-slate-700">
+          <div className="bg-orange-400 dark:bg-orange-700">
             <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
-              <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-gray-50 sm:text-4xl">
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-50 sm:text-4xl">
                 <span className="block">Ready to get started?</span>
-                <span className="block text-orange-500">
+                <span className="block text-amber-100 dark:text-slate-900">
                   Contact us to schedule a call.
                 </span>
               </h2>
               <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
                 <div className="inline-flex rounded-md shadow">
                   <Link href="/contact">
-                    <a className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-orange-500 hover:bg-orange-600">
+                    <a className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-slate-800 hover:bg-slate-700">
                       Contact now
                     </a>
                   </Link>
