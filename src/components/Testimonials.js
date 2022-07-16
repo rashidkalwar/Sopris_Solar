@@ -29,10 +29,8 @@ const FiveStars = () => {
       {[1, 2, 3, 4, 5].map((i) => (
         <li key={i}>
           <svg
-            ariaHidden="true"
+            aria-hidden="true"
             focusable="false"
-            dataPrefix="fas"
-            dataIcon="star"
             className="w-4 text-yellow-500"
             role="img"
             xmlns="http://www.w3.org/2000/svg"
@@ -63,7 +61,7 @@ function Testimonials() {
           {reviews.map((review, i) => (
             <div
               key={i}
-              className="mb-12 md:mb-0 border-2 border-gray-300 dark:border-gray-700 p-4 pb-6 rounded-lg"
+              className="mb-12 md:mb-0  border-gray-200 dark:border-gray-700 p-6 pb-6 rounded-lg shadow-2xl"
             >
               <div className="flex justify-center mb-6">
                 <img src={review.image} className="rounded-md w-full" />
