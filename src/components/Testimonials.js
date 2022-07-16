@@ -1,139 +1,90 @@
-import { motion } from 'framer-motion';
-import { useRef, useEffect, useState } from 'react';
-import { MdOutlineLocationOn } from 'react-icons/md';
-import { RiDoubleQuotesL, RiDoubleQuotesR, RiStarFill } from 'react-icons/ri';
-import { BsArrowLeft } from 'react-icons/bs';
+import { MdLocationOn } from 'react-icons/md';
+import { FaQuoteLeft } from 'react-icons/fa';
 
 const reviews = [
-  {
-    name: 'John wick',
-    address: 'Bolder, Colorado',
-    image: '/sun-style-0.avif',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus feugiat elit quis augue varius, in volutpat magna molestie. Suspendisse potenti.',
-  },
   {
     name: 'Peter parker',
     address: 'Bolder, Colorado',
     image: '/sun-style-1.avif',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus feugiat elit quis augue varius, in volutpat magna molestie. Suspendisse potenti.',
-  },
-  {
-    name: 'Deckerd shaw',
-    address: 'Bolder, Colorado',
-    image: '/sun-style-2.avif',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus feugiat elit quis augue varius, in volutpat magna molestie. Suspendisse potenti.',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur quae quaerat ad velit ab hic tenetur.',
   },
   {
     name: 'Geralt of rivia',
     address: 'Bolder, Colorado',
     image: '/sun-style-3.avif',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus feugiat elit quis augue varius, in volutpat magna molestie. Suspendisse potenti.',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur quae quaerat ad velit ab hic tenetur.',
   },
-  {
-    name: 'Stephen Strange',
-    address: 'Bolder, Colorado',
-    image: '/sun-style-4.avif',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus feugiat elit quis augue varius, in volutpat magna molestie. Suspendisse potenti.',
-  },
+
   {
     name: 'Bruce wayne',
     address: 'Bolder, Colorado',
     image: '/sun-style-5.avif',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus feugiat elit quis augue varius, in volutpat magna molestie. Suspendisse potenti.',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur quae quaerat ad velit ab hic tenetur.',
   },
 ];
 
-const Card = (props) => {
+const FiveStars = () => {
   return (
-    <>
-      <div className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 pointer-events-none">
-        <motion.img className="rounded-t-lg" src={props.image} alt="" />
-        <div className="p-2 md:p-4">
-          <h5 className="text-md md:text-2xl text-center font-semibold tracking-tight text-gray-900 dark:text-white">
-            {props.name}
-          </h5>
-          <div className="flex justify-center md:mt-1">
-            <MdOutlineLocationOn className="text-gray-500 mr-1" />
-            <h6 className="mb-1 md:mb-3 text-[10px] md:text-xs text-center font-medium tracking-normal text-gray-500">
-              {props.address}
-            </h6>
-          </div>
-          <div className="flex justify-center items-center my-1">
-            <RiStarFill className="text-amber-400 text-xl md:text-2xl mx-0.5" />
-            <RiStarFill className="text-amber-400 text-xl md:text-2xl mx-0.5" />
-            <RiStarFill className="text-amber-400 text-xl md:text-2xl mx-0.5" />
-            <RiStarFill className="text-amber-400 text-xl md:text-2xl mx-0.5" />
-            <RiStarFill className="text-amber-400 text-xl md:text-2xl mx-0.5" />
-          </div>
-          <RiDoubleQuotesL className="text-xl" />
-          <p className="mb-3 font-normal text-xs md:text-base text-center text-gray-700 dark:text-gray-400">
-            {props.text}
-          </p>
-          <div className="w-full flex justify-end">
-            <RiDoubleQuotesR className="text-xl -mt-2" />
-          </div>
-        </div>
-      </div>
-    </>
+    <ul className="flex justify-center mb-0">
+      {[1, 2, 3, 4, 5].map((i) => (
+        <li key={i}>
+          <svg
+            ariaHidden="true"
+            focusable="false"
+            dataPrefix="fas"
+            dataIcon="star"
+            className="w-4 text-yellow-500"
+            role="img"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 576 512"
+          >
+            <path
+              fill="currentColor"
+              d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+            ></path>
+          </svg>
+        </li>
+      ))}
+    </ul>
   );
 };
 
 function Testimonials() {
-  const [width, setWidth] = useState(0);
-  const carousel = useRef();
-
-  useEffect(() => {
-    setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
-  }, []);
-
   return (
-    <>
-      <div className="w-full text-center pt-10 md:pt-20">
-        <h1 className="text-2xl md:text-5xl font-bold text-gray-800 dark:text-gray-100 mb-3">
+    <div className="container my-24 px-6 mx-auto">
+      <section className="mb-32 text-gray-800 text-center">
+        <h2 className="text-3xl font-bold mb-3 dark:text-gray-200">
           Testimonials
-        </h1>
-        <h4 className="text-sm md:text-lg text-gray-600 dark:text-gray-300">
+        </h2>
+        <h4 className="text-md md:text-lg mb-14 text-gray-600 dark:text-gray-300">
           See what our customers are saying about us.
         </h4>
-      </div>
-      <motion.div
-        ref={carousel}
-        className="cursor-grab overflow-hidden mt-10"
-        whileTap={{ cursor: 'grabbing' }}
-      >
-        <div className="flex items-center md:hidden">
-          <BsArrowLeft className="text-xl text-center text-slate-700 dark:text-white" />
-          <p className="text-lg"> Swipe left to see more... </p>
+        <div className="grid md:grid-cols-3 gap-x-6 lg:gap-x-12">
+          {reviews.map((review, i) => (
+            <div
+              key={i}
+              className="mb-12 md:mb-0 border-2 border-gray-300 dark:border-gray-700 p-4 pb-6 rounded-lg"
+            >
+              <div className="flex justify-center mb-6">
+                <img src={review.image} className="rounded-md w-full" />
+              </div>
+              <h5 className="text-lg font-bold mb-4 dark:text-gray-200">
+                {review.name}
+              </h5>
+              <h6 className="font-medium text-emerald-600 mb-4">
+                <MdLocationOn className="inline-block mr-1 mb-1" />
+                {review.address}
+              </h6>
+              <p className="mb-4 dark:text-gray-400">
+                <FaQuoteLeft className="w-6 pr-2 inline-block dark:text-gray-300" />
+                {review.text}
+              </p>
+              <FiveStars />
+            </div>
+          ))}
         </div>
-        <motion.div
-          drag="x"
-          dragConstraints={{ right: 0, left: -width }}
-          className="flex"
-        >
-          {reviews.map((item, idx) => {
-            return (
-              <motion.div
-                key={idx}
-                whileHover={{ scale: 1.1 }}
-                className="min-h-[6rem] md:min-h-[20rem] min-w-[16rem]  md:min-w-[30rem] p-5 md:p-10"
-              >
-                {/* <img
-                  className="w-full h-full rounded-3xl pointer-events-none"
-                  src={image}
-                  alt=""
-                /> */}
-                <Card
-                  image={item.image}
-                  name={item.name}
-                  text={item.text}
-                  address={item.address}
-                />
-              </motion.div>
-            );
-          })}
-        </motion.div>
-      </motion.div>
-    </>
+      </section>
+    </div>
   );
 }
 

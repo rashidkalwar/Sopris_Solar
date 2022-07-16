@@ -68,7 +68,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <section className="h-[70vh] md:h-screen bg-gray-200 dark:bg-slate-900">
+        <section className="h-auto">
           <Testimonials />
         </section>
         <div className="">
