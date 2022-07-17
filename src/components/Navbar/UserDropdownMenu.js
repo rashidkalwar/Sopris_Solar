@@ -12,9 +12,7 @@ export default function UserDropdownMenu(props) {
   const isMobile = props.isMobile;
   const email = props.user.email;
   const username = props.user.displayName;
-  const userImage = props.user.photoURL
-    ? props.user.photoURL
-    : props.user.thirdPartyData.profile_image_url;
+  const userImage = props.user.photoURL;
   const logout = props.logout;
 
   return (

@@ -41,7 +41,7 @@ export const signInWithTwitter = () => {
     },
     error: (error) => {
       getAuthErrorMessage(error.code);
-      console.log(error);
+      console.error(error);
     },
   });
 };
@@ -54,7 +54,10 @@ export const signInWithGoogle = () => {
       saveUser(data.user);
       return 'Successfully signed in with Google!';
     },
-    error: (error) => getAuthErrorMessage(error.code),
+    error: (error) => {
+      getAuthErrorMessage(error.code);
+      console.error(error);
+    },
   });
 };
 
